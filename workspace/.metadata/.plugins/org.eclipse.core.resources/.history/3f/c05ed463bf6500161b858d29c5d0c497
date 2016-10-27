@@ -1,0 +1,11 @@
+import java.io.IOException;
+
+
+
+public class FileThread {
+
+	public static void main(String[] args) throws IOException {
+		CopyThread t;
+		t=new CopyThread("D://Gokul.txt","D://NewGokul.txt");
+		t.run();
+}

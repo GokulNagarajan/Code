@@ -1,0 +1,67 @@
+
+function Name(val) {
+	if(val.length<3)
+	{
+		alert("Name not valid length");
+		return false;
+	}
+	return true;
+}
+function Password(val) {
+	if(val.length<8)
+	{
+		alert("Password not valid length");
+		return false;
+	}
+	return true;
+}
+function Email(Email) {
+	if(val.length<9)
+	{
+		alert("Email id not valid");
+		return false;
+	}
+	return true;
+}
+function Age(val) {
+	if(val<17)
+	{
+		alert("Age shoulbe above 18");
+		return false;
+	}
+	return true;
+}
+function Country(val) {
+	if(val.lenght<3)
+	{
+		alert("Country name not valid");
+		return false;
+	}
+	return true;
+}
+function DOB(val)
+{
+	
+	if(val>="")
+	{
+		alert("DOB not Valid");
+		return false;
+	}
+	return true;
+}
+function validate()
+{
+	var name=document.RegForm.Name.value;
+	var pass=document.RegForm.Password.value;
+	var age=document.RegForm.Age.value;
+	var country=document.RegForm.Country.value;
+	var phone=document.RegForm.Phone.value;
+	var email=document.RegForm.Email.value;
+	var dob=document.RegForm.DOB.value;
+	//alert(name+" "+email+" "+age+" "+pass+" "+country+" "+phone+" "+dob);
+	if((!Name(name))||(!Password(pass))||(!Email(email))||(!Phone(phone))||(!Country(country))||(!DOB(dob)))
+	{
+		return false;
+	}
+	return true;
+}

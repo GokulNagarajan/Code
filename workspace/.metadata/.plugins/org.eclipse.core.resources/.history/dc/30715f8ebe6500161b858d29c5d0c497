@@ -1,0 +1,11 @@
+
+public class CopyThread extends Thread{
+	private String in;
+	private String out;
+
+	CopyThread(String in,String out)
+	{
+		this.in=in;
+		this.out=out;
+	}
+}

@@ -1,0 +1,22 @@
+package com.mindtree.daoimpl;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+public class Userdaoimpl implements Userdao{
+	private Statement stmt;
+	private Connection con=null;
+	@Override
+	public boolean login(User user)
+	{
+		con=DbConnector.connect();
+		return false;
+	}
+	@Override
+	public boolean register(User user)
+	{
+		
+		return false;
+	}
+
+}

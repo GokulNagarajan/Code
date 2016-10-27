@@ -1,0 +1,18 @@
+
+public class XmlSaxParser {
+
+	public static void main(String[] args) {
+		try {	
+	         File inputFile = new File("C:\Users\M1037562\Desktop\xml\userdtd.xml");
+	         SAXParserFactory factory = SAXParserFactory.newInstance();
+	         SAXParser saxParser = factory.newSAXParser();
+	         UserHandler userhandler = new UserHandler();
+	         saxParser.parse(inputFile, userhandler);     
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	      }
+	   }   
+
+	}
+
+}

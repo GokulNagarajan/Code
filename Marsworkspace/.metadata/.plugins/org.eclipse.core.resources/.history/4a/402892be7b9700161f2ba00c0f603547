@@ -1,0 +1,18 @@
+package com.mindtree.impl;
+
+import com.mindtree.dao.Userdao;
+import com.mindtree.daoimpl.Userdaoimpl;
+import com.mindtree.entity.User;
+import com.mindtree.service.LoginService;
+import com.mindtree.utility.DbConnector;
+
+public class LoginImpl implements LoginService
+{
+	public boolean logincheck(User user) {
+		// TODO Auto-generated method stub
+		Userdao dao=new Userdaoimpl();
+		if(dao.login(user))
+			return true;
+		return false;
+	}	
+}

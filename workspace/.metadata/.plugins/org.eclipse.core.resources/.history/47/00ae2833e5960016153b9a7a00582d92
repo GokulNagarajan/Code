@@ -1,0 +1,91 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.sql.RowSet;
+import javax.sql.rowset.CachedRowSet;
+
+import com.mindtree.dbutils.Dbutils;
+
+
+public class RowsetMain {
+	final static String URL="jdbc:mysql://localhost:3306/cachedrowset";
+	final static String USER="root";
+	final static String PASS="Welcome123";
+	static Connection conn=null;
+	static RowSet rs=null;
+	
+	public static void main(String[] args)  {
+		try {
+			conn=Dbutils.getCon();
+			rs=new RowSetImpl();
+			rs.setUrl(URL);
+			rs.setUsername(USER);
+			rs.setPassword(PASS);
+			rs.setCommand("SELECT * FROM user");
+			System.out.println("Before Update");
+			execute();
+			update();
+			System.out.println("After Update");
+			execute();
+			insert();
+			System.out.println("After Insert");
+			execute();
+			delete();
+			System.out.println("After Delete");
+			execute();
+		} catch (SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+	}
+	private static void insert() throws SQLException {
+		conn.setAutoCommit(false);
+		rs.first();
+		rs.moveToInsertRow();
+		rs.updateInt(1, 5);
+		rs.updateString(2, "Arjun");
+		rs.updateInt(3, 25);
+		rs.updateDouble(4, 25000);
+		rs.insertRow();
+		rs.moveToCurrentRow();
+		rs.acceptChanges(conn);
+		conn.setAutoCommit(true);
+	}
+	private static void update() throws SQLException {
+		conn.setAutoCommit(false);
+		rs.first();
+		rs.updateInt(1, 1);
+		rs.updateString(2, "Gokul");
+		rs.updateInt(3, 21);
+		rs.updateDouble(4, 20000);
+		rs.updateRow();
+		rs.acceptChanges(conn);
+		conn.setAutoCommit(true);
+	}
+	private static void delete() throws SQLException {
+		conn.setAutoCommit(false);
+		rs.first();
+		while(rs.next())
+		{
+			if(rs.getInt(1)==5)
+				rs.deleteRow();
+		}
+		rs.acceptChanges(conn);
+		conn.setAutoCommit(true);
+	}
+	public static void execute() throws SQLException
+	{
+		rs.execute(conn);
+		while(rs.next())
+		{
+			System.out.println(rs.getInt(1)+"\t"+rs.getString(2)+"\t"+rs.getInt(3)+"\t"+rs.getDouble(4));
+		}
+		
+	}
+}

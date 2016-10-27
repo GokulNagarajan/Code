@@ -1,0 +1,68 @@
+import java.sql.Connection;
+import java.sql.SQLException;
+import javax.sql.rowSet.JdbcrowSet;
+import javax.sql.rowSet.rowSetProvider;
+
+import com.mindtree.dbutils.Dbutils;
+
+
+public class rowSetMain {
+	final static String URL="jdbc:mysql://localhost:3306/rowSet";
+	final static String USER="root";
+	final static String PASS="Welcome123";
+	static Connection conn=null;
+	static JdbcrowSet rowSet =null;
+	
+	public static void main(String[] args)  {
+		try {
+			conn=Dbutils.getCon();
+		    rowSet = rowsetProvider.newFactory().createJdbcrowSet();  
+		    rowSet.setUrl(URL);
+		    rowSet.setUsername(USER);
+		    rowSet.setPassword(PASS);
+		    rowSet.setCommand("SELECT * FROM user");
+			System.out.println("Before Update");
+			conn.setAutoCommit(false);
+			execute();
+			rowSet.setCommand("UPDATE user "+"SET username = haran "+"where userid = "+2);
+			System.out.println("After Update");
+			execute();
+			rowSet.setCommand("DELETE FROM user where userid = "+1);
+			System.out.println("After Delete");
+			execute();
+			conn.setAutoCommit(true);
+		} catch (SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+	}
+	private static void insert() throws SQLException {
+		conn.setAutoCommit(false);
+		rowSet.first();
+		rowSet.moveToInsertRow();
+		rowSet.updateInt(1, 5);
+		rowSet.updateString(2, "Arjun");
+		rowSet.updateInt(3, 25);
+		rowSet.updateDouble(4, 25000);
+		rowSet.insertRow();
+		rowSet.moveToCurrentRow();
+		rowSet.acceptChanges(conn);
+		conn.setAutoCommit(true);
+	}
+	
+	public static void execute() throws SQLException
+	{
+		rowSet.execute();
+		while(rowSet.next())
+		{
+			System.out.println(rowSet.getInt(1)+"\t"+rowSet.getString(2)+"\t"+rowSet.getInt(3)+"\t"+rowSet.getDouble(4));
+		}
+		
+	}
+}

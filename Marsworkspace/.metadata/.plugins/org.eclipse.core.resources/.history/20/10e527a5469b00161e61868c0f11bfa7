@@ -1,0 +1,25 @@
+package com.mindtree.entity;
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.mindtree.entity.Address;
+import com.mindtree.entity.Employee;
+
+public class Main {
+	static Configuration cfg=null;
+	static SessionFactory sf=null;
+	static Session session=null;
+	public static void main(String[] args) {  
+	    cfg=new Configuration();  
+	    cfg.configure("hibernate.cfg.xml");  
+	    sf=cfg.buildSessionFactory();  
+	    session=sf.openSession(); 
+	    insert();
+	    fetch();    
+	} 

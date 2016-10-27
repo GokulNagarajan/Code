@@ -1,0 +1,7 @@
+package com.mindtree.entity;
+public class User {
+	public String name;
+	public String email;
+	public int age;
+	
+}

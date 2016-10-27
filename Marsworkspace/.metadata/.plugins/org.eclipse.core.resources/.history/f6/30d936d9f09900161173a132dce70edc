@@ -1,0 +1,19 @@
+package com.mindtree.Dao;
+
+import java.util.List;
+
+import com.mindtree.entity.User;
+
+public class UserDaoImpl implements UserDao {
+
+	public void addUser(User u) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

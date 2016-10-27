@@ -1,0 +1,9 @@
+
+public class IO {
+
+	public static void main(String[] args) {
+		User u=new User();
+		
+	}
+
+}

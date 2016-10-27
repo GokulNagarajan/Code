@@ -1,0 +1,16 @@
+import java.io.FileReader;
+
+
+public class FileThread {
+
+	public static void main(String[] args) {
+		FileReader fin=new FileReader("D://Gokul.txt");
+		if(fin!=null)
+			System.out.println("File exists");
+		else
+			System.out.println("File not exists");
+		
+			
+	}
+
+}

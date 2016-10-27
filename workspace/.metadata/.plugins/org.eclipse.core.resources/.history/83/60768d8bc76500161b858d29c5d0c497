@@ -1,0 +1,13 @@
+
+public class SpawnThread extends Thread{
+	int x=0;
+	public void run()
+	{
+		for(int i=0;i<1000;i++)
+		{
+			x=count;
+			x++;
+			count=x;
+		}
+	}
+}

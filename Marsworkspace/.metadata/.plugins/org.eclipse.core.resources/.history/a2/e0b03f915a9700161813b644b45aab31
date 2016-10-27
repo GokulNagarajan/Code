@@ -1,0 +1,24 @@
+package com.mindtree.daoimpl;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+public class Userdaoimpl implements Userdao{
+	private Statement stmt;
+	private Connection con=null;
+	private String sql=null;
+	@Override
+	public boolean login(User user)
+	{
+		con=DbConnector.connect();
+		sql="Select Count(*) from user where name="+user.name+" and password="+user.password;
+		return false;
+	}
+	@Override
+	public boolean register(User user)
+	{
+		
+		return false;
+	}
+
+}

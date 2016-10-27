@@ -1,0 +1,13 @@
+import javax.persistence.EntityManagerFactory;
+
+public class Main {
+
+	public static void main(String[] args) {
+		 EntityManagerFactory emf = Persistence.createEntityManagerFactory( "UserJPA" );
+	      
+	      EntityManager entitymanager = emf.createEntityManager( );
+	      entitymanager.getTransaction( ).begin( );
+
+	}
+
+}

@@ -1,0 +1,45 @@
+package com.mindtree.entity;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Student {
+	@Id
+	@GeneratedValue( strategy = GenerationType.AUTO )
+	int id;
+	String name;
+	@ManyToOne
+	List departmentList;
+	public Student(){}
+	public Student(int id, String name, List departmentList) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.departmentList = departmentList;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public List getDepartmentList() {
+		return departmentList;
+	}
+	public void setDepartmentList(List departmentList) {
+		this.departmentList = departmentList;
+	}
+	
+}

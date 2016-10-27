@@ -1,0 +1,5 @@
+package com.mindtree.impl;
+
+public class LoginImpl {
+
+}

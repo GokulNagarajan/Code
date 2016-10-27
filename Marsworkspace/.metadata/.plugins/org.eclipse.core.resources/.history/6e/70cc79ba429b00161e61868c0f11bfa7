@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.mindtree.entity.Transaction" table="TRANSACTION" >
+		<id name="id" type="long">
+			<column name="txn_id" />
+			<generator class="identity" />
+		</id>
+		<property name="date" type="date">
+			<column name="txn_date" />
+		</property>
+		<property name="total" type="double">
+			<column name="txn_total" />
+		</property>
+		<one-to-one name="customer" class="com.mindtree.entity.Customer"
+			cascade="save-update" />
+	</class>
+</hibernate-mapping>

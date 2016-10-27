@@ -1,0 +1,13 @@
+
+public class ThreadMain {
+
+	public static void main(String[] args) {
+		MyThread t=new MyThread(7);
+		
+		System.out.println("MyThread : "+t.isAlive());
+		System.out.println("MyThread : "+t.isDaemon());
+		System.out.println("MyThread : "+Thread.currentThread());
+		System.out.println("MyThread : "+t.sleep(2000));
+		
+	}
+}

@@ -1,0 +1,11 @@
+
+
+public class FileThread {
+
+	public static void main(String[] args) {
+		CopyThread t;
+		t=new Copythread("D://Gokul.txt","D://NewGokul.txt");
+		t.run();
+	}
+
+}

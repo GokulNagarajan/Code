@@ -1,0 +1,14 @@
+package com.mindtree.daoimpl;
+
+public class Userdaoimpl implements Userdao{
+	public boolean login(User user)
+	{
+		return false;
+	}
+	public boolean register(User user)
+	{
+		
+		return false;
+	}
+
+}

@@ -1,0 +1,52 @@
+function Name(val) {
+	var x=val;
+	if(x.length<6)
+	{
+		alert("Name not valid length");
+		return false;
+	}
+}
+function Password(val) {
+	var x=val;
+	if(x.length<8)
+	{
+		alert("Password not valid length");
+		return false;
+	}
+}
+function Email(Email) {
+	var x=val;
+	
+	if(x.length<6)
+	{
+		alert("Email not valid");
+		return false;
+	}
+}
+function Age(val) {
+	if(val<17)
+	{
+		alert("Age shoulbe above 18");
+		return false;
+	}
+}
+function Country(val) {
+	if(val==-1)
+	{
+		alert("Country not selected");
+		return false;
+	}
+}
+function validate()
+{
+	var name=document.RegForm.Name.value;
+	var pass=document.RegForm.Password.value;
+	var age=document.RegForm.Age.value;
+	var country=document.RegForm.Country.value;
+	var phone=document.RegForm.Phone.value;
+	var email=document.RegForm.Email.value;
+	var dob=document.RegForm.DOB.value;
+	
+	alert("Fill the form correctly");
+	return false;
+}

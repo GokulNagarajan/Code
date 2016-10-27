@@ -1,0 +1,43 @@
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.mindtree.UserDao.UserDao;
+import com.mindtree.entity.User;
+
+public class Main {
+
+	public static void main(String[] args) {
+		ApplicationContext ac=new ClassPathXmlApplicationContext("spring.xml");
+		UserDao udao=(UserDao)ac.getBean("userdao");
+		List<User> userList=null;
+		System.out.println("User Table");
+		userList=udao.getAllUsers();
+		for(User u:userList)
+			System.out.println(u);
+		User user=new User();
+		user.setId(8);
+		user.setName("Hari");
+		user.setAge(28);
+		//udao.saveUser(user);
+		System.out.println("After insert");
+		userList=udao.getAllUsers();
+		for(User u:userList)
+			System.out.println(u);
+		user.setId(1);
+		user.setName("Gokul");
+		user.setAge(24);
+		udao.updateUser(user);		
+		System.out.println("After update");
+		userList=udao.getAllUsers();
+		for(User u:userList)
+			System.out.println(u);
+		System.out.println("After delete");
+		user.setId(5);
+		udao.deleteUser(user);
+		for(User u:userList)
+			System.out.println(u);
+	}
+
+}

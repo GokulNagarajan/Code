@@ -1,0 +1,27 @@
+package com.mindtree.Utility;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class Utils {
+private static SessionFactory sessionFactory;
+	
+	private static SessionFactory buildSessionFactory() {
+        try {
+        	SessionFactory sf=new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+            return sf;
+        }
+        catch (Throwable ex) {
+            System.err.println("Initial SessionFactory creation failed." + ex);
+            ex.printStackTrace();
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
+	
+	public static SessionFactory getSessionFactory() {
+		if(sessionFactory == null){ 
+			sessionFactory = buildSessionFactory();
+		System.out.println("session created");}
+        return sessionFactory;
+}
+}

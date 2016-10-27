@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Register</title>
+<link href="index.css" rel="stylesheet" type="text/css" />
+<script src="index.js" type="text/javascript"></script>
+</head>
+<body>
+<h2>Register</h2>
+</body>
+<div>
+<form name="RegFrom" action="RegisterPost" method="post" onsubmit="return validate()">
+<p>Name</p>
+<input type="text" name="Name" onchange="Name(this.value)" required="required" />
+<p>Password</p>
+<input type="password" name="Password" onchange="Password(this.value)" required="required" />
+<p>Email</p>
+<input type="text" name="Email" onchange="Email(this.value)"/>
+<p>Phone</p>
+<input type="text" name="Phone" placeholder="Enter phone..." onchange="Phone(this.value)" required="required" />
+<p>Country</p>
+<select name="Country" onchange="Country(this.id)" required="required">
+<option id="-1">--Select--</option>
+<option>Australia</option>
+<option>Belgium</option>
+<option>China</option>
+<option>Denmark</option>
+<option>England</option>
+<option>France</option>
+<option>India</option>
+<option>Japan</option>
+<option>Germany</option>
+<option>Hungary</option>
+</select>
+<p>Age</p>
+<input type="number" name="Age" onchange="Age(this.value)" required="required" />
+<p>Date of Birth</p>
+<input type="date" name="DOB" placeholder="dd/mm/yyyy" required="required" />
+<p>
+<input type="submit" value="Submit" />
+</p>
+</form>
+</div>
+</body>
+</html>

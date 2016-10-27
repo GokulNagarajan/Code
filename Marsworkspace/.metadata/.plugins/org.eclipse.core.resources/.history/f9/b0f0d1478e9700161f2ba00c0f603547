@@ -1,0 +1,43 @@
+package com.mindtree.daoimpl;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.mindtree.dao.Userdao;
+import com.mindtree.entity.User;
+import com.mindtree.utility.DbConnector;
+
+public class Userdaoimpl implements Userdao{
+	private Statement stmt;
+	private Connection con=null;
+	private String sql=null;
+	public boolean login(User user) throws ClassNotFoundException, SQLException
+	{
+		con=DbConnector.connect();
+		sql="Select Count(*) from user where name="+user.name+" and password="+user.password;
+		stmt=con.createStatement();
+		ResultSet rs=stmt.executeQuery(sql);
+		while(rs.next())
+			if(rs.getInt(1)==1)
+				return true;
+		return false;
+	}
+	public boolean register(User user) throws ClassNotFoundException, SQLException
+	{
+		con=DbConnector.connect();
+		sql="Insert into user (name,password,email,phone,country,age,date)"
+		+" values('"
+		+user.name+"','"+user.password+"','"
+		+user.email+"','"+user.phone+"','"
+		+user.country+"','"+user.age+"','"+(Date)user.dob+"')";
+		stmt=con.createStatement();
+		int i=stmt.executeUpdate(sql);
+		if(i>0)
+			return true;
+		return false;
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.mindtree.Dao;
+
+import com.mindtree.entity.Address;
+import com.mindtree.entity.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+	Employee e1=new Employee();  
+	public void addEmployee() {
+		AddressDao adao=new AddressDaoImpl();
+		e1.setName("Gokul Nagarajan");  
+	    e1.setEmail("gokulngone@gmail.com");  	      
+	    Address address1=adao.getAddress();
+	    e1.setAddress(address1);
+	}
+
+	public Employee getEmployee() {
+		addEmployee();
+		return e1;
+	}
+
+}

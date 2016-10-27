@@ -1,0 +1,45 @@
+package com.mindtree.entity;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Department {
+	@Id
+	@GeneratedValue( strategy = GenerationType.AUTO )
+	int id;
+	String name;
+	@OneToMany(targetEntity=Student.class,fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	List studentList;
+	public Department(){}
+	public Department(int id, String name, List studentList) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.studentList = studentList;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public List getStudentList() {
+		return studentList;
+	}
+	public void setStudentList(List studentList) {
+		this.studentList = studentList;
+	}
+	
+}

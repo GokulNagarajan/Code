@@ -1,0 +1,6 @@
+package com.mindtree.dao;
+
+public interface Userdao {
+	public boolean login(User user);
+	public boolean register(User user);
+}

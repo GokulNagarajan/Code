@@ -1,0 +1,10 @@
+package com.mindtree.entity;
+
+import java.util.List;
+
+public class Student {
+	int id;
+	String name;
+	Set departmentList;
+	
+}

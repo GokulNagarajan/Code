@@ -1,0 +1,43 @@
+function Name(val) {
+	var x=val;
+	if(x.length<6)
+	{
+		alert("Name not valid length");
+		return false;
+	}
+}
+function Password(val) {
+	var x=val;
+	if(x.length<8)
+	{
+		alert("Password not valid length");
+		return false;
+	}
+}
+function Email(Email) {
+	var x=val;
+	
+	if(x.length<6)
+	{
+		window.alert("Email not valid");
+		return false;
+	}
+}
+function Age(val) {
+	if(val<17)
+	{
+		window.alert("Age shoulbe above 18");
+		return false;
+	}
+}
+function Country(val) {
+	if(val==-1)
+	{
+		window.alert("Country not selected");
+		return false;
+	}
+}
+function validate()
+{
+	
+}

@@ -1,0 +1,5 @@
+package com.mindtree.Dao;
+
+public class UserDaoImpl implements UserDao {
+
+}

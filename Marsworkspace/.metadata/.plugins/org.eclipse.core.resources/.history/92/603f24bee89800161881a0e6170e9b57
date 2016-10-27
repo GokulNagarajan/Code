@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+<link href="NewFile.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>Register</h1>
+<form action="RegisterPost" method="post">
+<p>user name : <input type="text" name="username" /></p>
+<p>email id  : <input type="text" name="email" /></p>
+<p>age       : <input type="text" name="age" /></p>
+<p>password  : <input type="password" name="password" /></p>
+<input type="submit" value="Register" />
+</form>
+</body>
+</html>

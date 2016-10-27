@@ -1,0 +1,17 @@
+package com.mindtree.impl;
+
+import com.mindtree.entity.User;
+import com.mindtree.service.RegisterService;
+import com.mindtree.utility.DbConnector;
+
+public class RegisterImpl implements RegisterService{
+
+	@Override
+	public boolean registercheck(User user) {
+		Userdao dao=new Userdaoimpl();
+		if(dao.register(user))
+			return true;
+		return false;
+	}
+
+}

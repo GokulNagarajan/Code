@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Wed Oct 26 10:48:39 IST 2016
+org.eclipse.jst.j2ee.server\:SpringSecurity=D\:\\Program Files\\Apache Software Foundation\\Tomcat 8.0\\wtpwebapps\\SpringSecurity
+org.eclipse.jst.j2ee.server\:/binary\:D\:\\LocalRepository\\org\\springframework\\spring-web\\4.3.2.RELEASE\\spring-web-4.3.2.RELEASE.jar=D\:\\Program Files\\Apache Software Foundation\\Tomcat 8.0\\wtpwebapps\\SpringSecurity\\WEB-INF\\lib\\spring-web-4.3.2.RELEASE.jar

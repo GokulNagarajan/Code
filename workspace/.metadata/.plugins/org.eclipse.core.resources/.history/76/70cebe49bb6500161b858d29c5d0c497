@@ -1,0 +1,23 @@
+
+public class ThreadMain {
+
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		MyThread t=new MyThread(7);
+		t.start();
+		try {
+			System.out.println("MyThread is alive : "+t.isAlive());
+			System.out.println("MyThread is daemon : "+t.isDaemon());
+			System.out.println("MyThread current thread : "+Thread.currentThread());
+			System.out.println("Old time");
+			System.out.println(System.currentTimeMillis());
+			MyThread.sleep(2000);
+			System.out.println("New time");
+			System.out.println(System.currentTimeMillis());
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		t.stop();
+	}
+}

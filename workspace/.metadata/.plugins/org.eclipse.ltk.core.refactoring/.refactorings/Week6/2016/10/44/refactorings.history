@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;BufferedIOStream.java&apos; to &apos;Week6/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;Week6&apos;&#x0D;&#x0A;- Destination element: &apos;Week6/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;com.mindtree.entity.BufferedIOStream.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;" element1="/src&lt;com.mindtree.entity{BufferedIOStream.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1477374787050" units="1" version="1.0"/>
+</session>

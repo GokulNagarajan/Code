@@ -1,0 +1,89 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+
+
+public class FileThread {
+
+	public static void main(String[] args) {
+		CopyThread[] t=new CopyThread[5];
+		int start,end;
+		for(int i=0;i<5;i++)
+			t[i]=new CopyThread("D://"+(i+1)+".txt","D://New"+(i+1)+".txt");
+		try
+		{
+			start=(int)System.currentTimeMillis()%1000;
+			for(int i=0;i<5;i++)
+				t[i].run();
+			end=(int)System.currentTimeMillis()%1000;
+			System.out.println("\nTime Taken : "+(end-start));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.toString());
+		}
+		try
+		{
+			start=(int)System.currentTimeMillis()%1000;
+			run("D://6.txt","D://New6.txt");
+			run("D://7.txt","D://New7.txt");
+			run("D://8.txt","D://New8.txt");
+			run("D://9.txt","D://New9.txt");
+			run("D://10.txt","D://New10.txt");
+			end=(int)System.currentTimeMillis()%1000;
+			System.out.println("\nTime Taken : "+(end-start));
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.toString());
+		}
+}
+	public static void run(String in,String out)
+	{
+		FileInputStream fin = null;
+		FileOutputStream fout = null;
+		int i;
+		try {
+			fin = new FileInputStream(in);
+			fout = new FileOutputStream(out);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(fin==null)
+		{
+			System.out.println("\nFile not exists");
+			System.exit(0);;
+		}
+		System.out.println("\nFile exists");		
+		try {
+			while((i=fin.read())!=-1)
+			{
+				System.out.print((char)i);
+				fout.write((char)i);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
+		{
+			if(fin!=null)
+				try {
+					fin.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			if(fout!=null)
+				try {
+					fout.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+	}
+}

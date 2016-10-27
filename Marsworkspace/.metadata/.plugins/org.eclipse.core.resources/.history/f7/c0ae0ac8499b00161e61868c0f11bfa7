@@ -1,0 +1,6 @@
+package com.mindtree.Dao;
+
+public interface AddressDao {
+	void addAddress();
+	Address getAddress();
+}

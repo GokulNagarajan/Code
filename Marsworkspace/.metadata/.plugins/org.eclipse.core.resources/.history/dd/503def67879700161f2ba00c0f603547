@@ -1,0 +1,87 @@
+@CHARSET "ISO-8859-1";
+body 
+{
+	margin: 0px;
+}
+h2 {
+    color: red;
+    text-align: center;
+    font-family: arial;
+}
+p {
+    margin-left: 50px;
+    font-family: timesnewroman;
+    font-size: 20px;
+}
+table {
+	border-collapse: collapse;
+	border-style: solid;
+	border-color: black;
+}
+th {
+	font-family: sans-serif;
+	font-size: 25px;
+	text-align: center;
+	spacing : 20px;
+	padding : 20px;
+}
+td {
+	font-family: serif;
+	font-size: 20px;
+	text-align: center;
+	spacing : 20px;
+	padding : 20px;
+}
+form {
+	align:center;
+	margin: 0px 600px;
+	cell-padding : 50px;
+	cell-spacing : 50px;
+	border: solid;
+	border-color: black;
+	background-color: #c0c0c0;
+}
+div.title {
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: grey;
+	animation-name: use;
+	animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+div.form {
+	background-color: #00ffff;
+}
+div.formcontent {
+		margin: 0px;
+}
+div.Logcontent {
+		margin: 0px;
+}
+div.Homecontent {
+		margin: 50px;
+}
+div.tablecontent {
+		margin: 10px 400px;
+		background-color: grey;
+}
+button {
+    background-color: #4CAF50;
+    border: black;
+    border-style: solid;
+    color: white;
+    margin: 15px;
+    padding: 10px 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    height: 50px;
+    width: 150px
+}
+input {
+	margin-left: 50px;	
+}
+@keyframes use{  
+    from {background-color: #eeee00;}  
+    to {background-color: grey;}  
+}

@@ -1,0 +1,18 @@
+import java.io.IOException;
+
+
+
+public class FileThread {
+
+	public static void main(String[] args) {
+		CopyThread t;
+		t=new CopyThread("D://Gokul.txt","D://NewGokul.txt");
+		try {
+			t.run();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

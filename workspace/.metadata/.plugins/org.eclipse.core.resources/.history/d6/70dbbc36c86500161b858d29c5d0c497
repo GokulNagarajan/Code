@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class SpawnMain {
+	private static Scanner scan=new Scanner(System.in);
+	public static int count=0;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n;
+		System.out.println("Enter the number of threads to create");
+		n=scan.nextInt();
+		SpawnThread[] t=new SpawnThread[n];
+		for(int i=0;i<n;i++)
+		{
+			t[i]=new SpawnThread();
+			t[i].run(count);
+		}
+	}
+
+}

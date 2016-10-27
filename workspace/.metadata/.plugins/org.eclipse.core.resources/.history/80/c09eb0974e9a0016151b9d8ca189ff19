@@ -1,0 +1,71 @@
+package com.mindtree.entity;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class BufferedIOStream {
+
+	public static void main(String[] args) {
+		System.out.println("Starting the file copy");
+		try {
+			//copy("D://TextFile//Userdata.txt", "D://TextFile//UserdataCopy.txt");
+			System.out.println("\nCopy Completed");
+			FileInputStream fis = new FileInputStream(
+					"D://TextFile//dataCopy.txt");
+			DataInputStream dis = new DataInputStream(fis);
+			String s;
+			System.out.println("\nOpening Copied File\n");
+			while ((s = dis.readLine()) != null) {
+				System.out.println(s);
+			}
+			System.out.println("\nClosing Copied File\n");
+			if (dis != null)
+				dis.close();
+			if (fis != null)
+				fis.close();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+			//e.printStackTrace();
+		}
+	}
+
+	public static void copy(String in, String out) throws IOException {
+		FileOutputStream fos = null;
+		FileInputStream fis = null;
+		BufferedOutputStream bos = null;
+		BufferedInputStream bis= null;
+		try {
+
+			fos = new FileOutputStream(out);
+			fis = new FileInputStream(in);
+			bos =new BufferedOutputStream(fos);
+			bis = new BufferedInputStream(fis);
+			String s;
+			byte b[];
+			int i;
+			User user = new User();
+			s = "Userid\t\tUsername\tAge\tSalary\n";
+			b=s.getBytes();
+			bos.write(b);
+			while ((i = bis.read()) != -1) {
+				System.out.println((char)i);
+			}
+		} catch (IOException e) {
+			throw new IOException("File cannot be accessed");
+		} finally {
+			if (bis != null)
+				bis.close();
+			if (bos != null)
+				bos.close();
+			if (fis != null)
+				fis.close();
+			if (fos != null)
+				fos.close();
+		}
+	}
+}

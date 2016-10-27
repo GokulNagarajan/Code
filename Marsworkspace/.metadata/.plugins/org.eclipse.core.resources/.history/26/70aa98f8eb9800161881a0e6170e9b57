@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link href="NewFile.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="head"><h1>Login</h1></div>
+<div class="body">
+<form action="LoginPost" method="post">
+<p>user name : <input type="text" name="username" /></p>
+<p>password  : <input type="password" name="password" /></p>
+<input type="submit" value="Login" />
+</form>
+</div>
+</body>
+</html>

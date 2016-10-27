@@ -1,0 +1,124 @@
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>  
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>  
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="NewFile.css" rel="stylesheet" type="text/css" />
+<title>LoggedHome</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+function sort()
+{
+	 var xhttp;
+	  if (window.XMLHttpRequest) {
+	    xhttp = new XMLHttpRequest();
+	    } else {
+	    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	  }
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	    	 var jsonObj = JSON.parse(http_request.responseText);
+			 var table="<table>"
+			 	 +"<tr>"  
+				 +"<th>User Name</th>" 
+				 +"<th>Email ID</th>"
+				 +"<th>Age</th>"
+				 +"<th>Salary</th>"
+				 +"</tr>";
+			 for(var x=0;x<jsonObj.users.length;x++)
+			 {
+				 table+="<tr>"  
+					 +"<td>"+jsonObj.users[x].name+"</td>" 
+					 +"<td>"+jsonObj.users[x].email+"</td>"
+					 +"<td>"+jsonObj.users[x].age+"</td>"
+					 +"<td>"+jsonObj.users[x].salary+"</td>"
+					 +"</tr>";
+			 }
+			 table+="</table>";
+             //document.getElementById("table").innerHTML = table;
+             
+	    }
+	  };
+	  xhttp.open("GET","jsonuser.json", true);
+	  xhttp.send();
+}
+/*
+$(document).ready(function(){
+    $("button.show").click(function(){
+        $.getJSON("jsonuser.json", function(result){
+            $.each(result, function(index, field){
+            	$("#table").append(field.name + " "+field.email+" "+field.age+" "+field.salary);
+            });
+        });
+    });
+});
+
+$(document).ready(function(){
+    $("button.show").click(function(){
+        $("#table").show();
+    });
+});
+*/
+$(document).ready(function(){
+    $("button.hide").click(function(){
+        $("#table").hide();
+    });
+});
+</script>
+</head>
+<body>
+<div class="head"> User Details</div>
+<div class="body" id="table">
+<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"  
+     url="jdbc:mysql://localhost/user"  
+     user="root"  password="Welcome123"/>  
+<sql:query dataSource="${db}" var="rs">  
+SELECT * from user;  
+</sql:query>  
+<table>  
+<tr>  
+<th>User Name</th>  
+<th>Email ID</th>  
+<th>Age</th>  
+</tr>  
+<c:forEach var="table" items="${rs.rows}">  
+<tr>  
+<td><c:out value="${table.username}"/></td>  
+<td><c:out value="${table.email}"/></td>  
+<td><c:out value="${table.age}"/></td>  
+</tr>  
+</c:forEach>  
+</table>  
+</div>
+<div class="end">
+<!-- <form> 
+ <button class="button"  name="register" onclick="location.href='index.html';">
+ Logout
+ </button>
+</form>
+-->
+<button class="logout"  name="register" onclick="location.href='index.html';">
+ Logout
+ </button>
+<button class="hide" name="hide">
+ Hide
+</button>
+<button class="show" name="show" onclick="sort()">
+ Show
+</button>
+<!--  
+<form>
+ <button class="order" name="order" onclick="Sort()">
+ Sort
+ </button>
+ </form>
+ -->
+</div>
+</body>
+</html>

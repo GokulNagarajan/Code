@@ -1,0 +1,5 @@
+projectKey=Spring:Spring
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/Spring:Spring
+ceTaskId=AVflGiqJRN8XC9B7z_CG
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVflGiqJRN8XC9B7z_CG

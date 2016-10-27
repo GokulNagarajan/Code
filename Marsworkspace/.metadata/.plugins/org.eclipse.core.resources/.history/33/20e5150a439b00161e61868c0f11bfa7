@@ -1,0 +1,19 @@
+package com.mindtree.entity;
+
+public class Employee {
+	private int employeeId;  
+	private String name,email;  
+	private Address address;
+	public Employee()
+	{
+		
+	}
+	public Employee(int employeeId, String name, String email, Address address) {
+		super();
+		this.employeeId = employeeId;
+		this.name = name;
+		this.email = email;
+		this.address = address;
+	}  
+	
+}

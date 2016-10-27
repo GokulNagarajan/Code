@@ -1,0 +1,27 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
+import com.mindtree.entity.User;
+
+
+public class IO {
+
+	public static void main(String[] args) {
+		User u=new User();
+		u.setId("M1037562");
+		u.setName("Gokul");
+		u.setAge(21);
+		u.setSal(20000);
+		FileOutputStream fout=null;
+		FileInputStream fin=null;
+		
+		try {
+			fout=new FileOutputStream("D:\\NewUser.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

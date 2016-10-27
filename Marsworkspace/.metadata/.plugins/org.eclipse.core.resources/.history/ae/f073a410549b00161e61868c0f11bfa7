@@ -1,0 +1,78 @@
+import java.util.Iterator;
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.mindtree.Dao.EmployeeDao;
+import com.mindtree.Dao.EmployeeDaoImpl;
+import com.mindtree.entity.Address;
+import com.mindtree.entity.Employee;
+
+public class Main {
+	static Configuration cfg=null;
+	static SessionFactory sf=null;
+	static Session session=null;
+	public static void main(String[] args) { 
+		
+	    cfg=new Configuration();  
+	    cfg.configure("hibernate.cfg.xml");  
+	    sf=cfg.buildSessionFactory();  
+	    session=sf.openSession();
+	    //insert();
+	    fetch();
+	    
+	}  
+	public static void daoInsert()
+	{
+		EmployeeDao edao=new EmployeeDaoImpl();
+	    Employee e=edao.getEmployee());	    
+		Transaction tx=session.beginTransaction();  	      
+		session.persist(e1);  
+	    tx.commit();  	      
+	    System.out.println("Inserted Successfully");
+	}
+	public static void daoFetch()
+	{
+		
+	}
+	public static void insert()
+	{
+		Transaction tx=session.beginTransaction();  	      
+	    Employee e1=new Employee();  
+	    e1.setName("Gokul Nagarajan");  
+	    e1.setEmail("gokulngone@gmail.com");  	      
+	    Address address1=new Address();  
+	    address1.setAddressLine1("229/1,Ashok nagar,Moolapalayam");  
+	    address1.setCity("Erode");  
+	    address1.setState("TN");  
+	    address1.setCountry("India");  
+	    address1.setPincode(6380002);    
+	    e1.setAddress(address1);  
+	    address1.setEmployee(e1);	      
+	    session.persist(e1);  
+	    tx.commit();  	      
+	    //session.close();  
+	    System.out.println("success");  
+	}
+	public static void fetch()
+	{
+		   Query query=session.createQuery("from Employee e");  
+		    List<Employee> list=query.list();  
+		      
+		    Iterator<Employee> itr=list.iterator();  
+		    while(itr.hasNext()){  
+		     Employee emp=itr.next();  
+		     System.out.println(emp.getEmployeeId()+" "+emp.getName()+" "+emp.getEmail());  
+		     Address address=emp.getAddress();  
+		     System.out.println(address.getAddressLine1()+" "+address.getCity()+" "+  
+		        address.getState()+" "+address.getCountry());  
+		    }  
+		  
+		    session.close();  
+		    System.out.println("success");  
+	}
+}

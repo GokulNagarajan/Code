@@ -1,0 +1,20 @@
+
+public class ThreadMain {
+
+	public static void main(String[] args) {
+		MyThread t=new MyThread(7);
+		t.run();
+	}
+
+}
+public class MyThread extends Thread
+{
+	int i;
+	public MyThread(int j) {
+		this.i=i;
+	}
+	public void run()
+	{
+		System.out.println("The number is : "+i);
+	}
+}

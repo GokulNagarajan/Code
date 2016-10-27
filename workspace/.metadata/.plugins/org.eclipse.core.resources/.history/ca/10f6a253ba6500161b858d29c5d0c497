@@ -1,0 +1,13 @@
+
+public class ThreadMain {
+
+	public static void main(String[] args) {
+		MyThread t=new MyThread(7);
+		
+		System.out.println("MyThread : "+t.isAlive());
+		System.out.println("MyThread : "+t.run(););
+		System.out.println("MyThread : "+t.isAlive());
+		System.out.println("MyThread : "+t.isAlive());
+		
+	}
+}

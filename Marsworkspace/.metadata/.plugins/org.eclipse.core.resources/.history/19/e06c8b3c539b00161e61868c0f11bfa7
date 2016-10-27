@@ -1,0 +1,17 @@
+package com.mindtree.Dao;
+
+import com.mindtree.entity.Address;
+
+public class AddressDaoImpl implements AddressDao {
+
+	public void addAddress() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public Address getAddress() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

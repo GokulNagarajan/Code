@@ -1,0 +1,11 @@
+import com.mindtree.entity.User;
+
+
+public class IO {
+
+	public static void main(String[] args) {
+		User u=new User();
+		
+	}
+
+}

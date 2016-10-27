@@ -1,0 +1,8 @@
+package com.mindtree.entity;
+
+public class Student {
+	int id;
+	String name;
+	List departmentList;
+	
+}

@@ -1,0 +1,11 @@
+public class MyThread extends Thread
+{
+	int i;
+	public MyThread(int j) {
+		this.i=i;
+	}
+	public void run()
+	{
+		System.out.println("The number is : "+i);
+	}
+}

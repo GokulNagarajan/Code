@@ -1,0 +1,40 @@
+
+
+public class FileThread {
+
+	public static void main(String[] args) {
+		CopyThread[] t=new CopyThread[5];
+		for(int i=0;i<5;i++)
+			t[i]=new CopyThread("D://"+(i+1)+".txt","D://New"+(i+1)+".txt");
+		CopyThread t1=new CopyThread("D://6.txt","D://New6.txt");
+		CopyThread t2=new CopyThread("D://7.txt","D://New7.txt");
+		CopyThread t3=new CopyThread("D://8.txt","D://New8.txt");
+		CopyThread t4=new CopyThread("D://9.txt","D://New9.txt");
+		CopyThread t5=new CopyThread("D://10.txt","D://New10.txt");
+		try
+		{
+			System.out.println("\n"+System.currentTimeMillis());
+			for(int i=0;i<5;i++)
+				t[i].run();
+			System.out.println("\n"+System.currentTimeMillis());
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.toString());
+		}
+		try
+		{
+			System.out.println("\n"+System.currentTimeMillis());
+			t1.run();
+			t2.run();
+			t3.run();
+			t4.run();
+			t5.run();
+			System.out.println("\n"+System.currentTimeMillis());
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.toString());
+		}
+}
+}

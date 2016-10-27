@@ -1,0 +1,20 @@
+package com.mindtree.service;
+
+import java.util.List;
+
+import com.mindtree.Dao.UserDao;
+import com.mindtree.entity.User;
+
+public class UserServiceImpl implements UserService {
+	//UserDao ud=new Use
+	public void createUser(User u) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public List<User> getUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

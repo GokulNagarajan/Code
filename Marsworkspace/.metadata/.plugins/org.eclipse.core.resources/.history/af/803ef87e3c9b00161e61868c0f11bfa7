@@ -1,0 +1,13 @@
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.mindtree.Utility.Utils;
+import com.mindtree.entity.Customer;
+import com.mindtree.entity.Transaction;
+
+public class Hibernat1to1 {
+
+	public static void main(String[] args) {
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;ValidateServlet.java&apos; to &apos;Session/src/com.mindtree.controller&apos;&#x0D;&#x0A;- Original project: &apos;Cookie&apos;&#x0D;&#x0A;- Destination element: &apos;Session/src/com.mindtree.controller&apos;&#x0D;&#x0A;- Original element: &apos;com.mindtree.controller.ValidateServlet.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=Session/src&lt;com.mindtree.controller" element1="/src&lt;com.mindtree.controller{ValidateServlet.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1477432233665" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,17 @@
+package com.mindtree.entity;
+
+import java.util.List;
+
+public class Department {
+	int id;
+	String name;
+	List studentList;
+	public Department(){}
+	public Department(int id, String name, List studentList) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.studentList = studentList;
+	}
+	
+}

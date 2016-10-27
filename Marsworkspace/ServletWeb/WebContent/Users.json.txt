@@ -1,0 +1,6 @@
+{"users":[
+{"name":"gokul","email":"gokulngone@gmail.com","age":"21","salary":"20000"},
+{"name":"raja","email":"raja91@gmail.com","age":"23","salary":"25000"},
+{"name":"rakes","email":"rak123ngone@gmail.com","age":"22","salary":"22000"},
+]
+}

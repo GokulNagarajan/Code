@@ -1,0 +1,71 @@
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
+
+public class UserParseHandler extends DefaultHandler{
+
+	   boolean fName = false;
+	   boolean mName = false;
+	   boolean lName = false;
+	   boolean age = false;
+	   boolean id = false;
+	   boolean salary = false;
+
+	   @Override
+	   public void startElement(String uri, 
+	      String localName, String qName, Attributes attributes)
+	         throws SAXException {
+		  if (qName.equalsIgnoreCase("user")) {
+	         String uid = attributes.getValue("id");
+	         System.out.println("User Id : " + uid);
+	      } else if (qName.equalsIgnoreCase("fname")) {
+	         fName = true;
+	      } else if (qName.equalsIgnoreCase("mname")) {
+	         mName = true;
+	      } else if (qName.equalsIgnoreCase("lname")) {
+	         lName = true;
+	      }
+	      else if (qName.equalsIgnoreCase("age")) {
+		         age = true;
+		  }
+	      else if (qName.equalsIgnoreCase("salary")) {
+			     salary = true;
+		  }
+	   }
+
+	   @Override
+	   public void endElement(String uri, 
+	      String localName, String qName) throws SAXException {
+	      if (qName.equalsIgnoreCase("user")) {
+	         System.out.println("End Element\n");
+	      }
+	   }
+
+	   @Override
+	   public void characters(char ch[], 
+	      int start, int length) throws SAXException {
+		  if (fName) {
+	         System.out.println("First Name: " 
+	         + new String(ch, start, length));
+	         fName = false;
+	      } else if (mName) {
+	         System.out.println("Last Name: " 
+	         + new String(ch, start, length));
+	         mName = false;
+	      } else if (lName) {
+	         System.out.println("Nick Name: " 
+	         + new String(ch, start, length));
+	         lName = false;
+	      } else if (age) {
+	         System.out.println("Marks: " 
+	         + new String(ch, start, length));
+	         age = false;
+	      }
+	      else if (salary) {
+		         System.out.println("Marks: " 
+		         + new String(ch, start, length));
+		         salary = false;
+		      }
+	   }
+	}

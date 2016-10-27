@@ -1,0 +1,34 @@
+import java.util.Scanner;
+public class SpawnMain {
+	private static Scanner scan=new Scanner(System.in);
+	public static int count=0;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n;
+		FileOutputStream out=new FileOutputStream("D://doc.txt");
+		while(true)
+		{
+		try
+		{
+			System.out.println("Enter the number of threads to create");
+			n=scan.nextInt();
+			if(n>0)
+				break;
+			else
+				System.out.println("Enter number greater than 0");
+		}
+		catch(Exception e)
+		{
+			System.out.println("Enter valid number");
+			scan.next();
+		}
+		}
+		SpawnThread[] t=new SpawnThread[n];
+		for(int i=0;i<n;i++)
+		{
+			t[i]=new SpawnThread();
+			t[i].run(count);
+		}
+	}
+
+}

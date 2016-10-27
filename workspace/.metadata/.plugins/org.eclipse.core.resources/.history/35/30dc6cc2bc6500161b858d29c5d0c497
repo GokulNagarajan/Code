@@ -1,0 +1,31 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class FileThread {
+
+	public static void main(String[] args) {
+		FileReader fin = null;
+		try {
+			fin = new FileReader("D://Gokul.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(fin==null)
+		{
+			System.out.println("File not exists");
+			System.exit(0);;
+		}
+		System.out.println("File not exists");		
+		try {
+			while(fin.read()>=0)
+				System.out.println(fin.read());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}

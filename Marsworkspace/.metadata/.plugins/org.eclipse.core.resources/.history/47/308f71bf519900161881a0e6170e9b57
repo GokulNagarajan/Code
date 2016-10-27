@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>IndexHome</title>
+<link href="NewFile.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="head"> Home </div>
+<div class="body">
+<br><br>
+<form>
+<p align="center">
+<button type="button" class="button" name="login" onclick="location.href = 'Login.html';" >Login</button>
+<p align="center"><button type="button" class="button" name="register" onclick="location.href = 'Register.html';">Register</button>
+</p>
+</form>
+</div>
+</body>
+</html>

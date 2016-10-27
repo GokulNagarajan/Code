@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+
+public class Test {
+	@SuppressWarnings({"unchecked","unchecked"})
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayList<HashMap<Integer,String>> al=new ArrayList<HashMap<Integer,String>>();
+		HashMap m=new HashMap<Integer, String>();
+		m.put(1, "one");
+		m.put(2, "two");
+		al.add(m);
+		m=new HashMap<Integer, String>();
+		m.put(3, "three");
+		m.put(4, "four1");
+		m.put(4, "four2");
+		al.add(m);
+		m=new HashMap<Integer, String>();
+		m.put(5, "five1");
+		m.put(5, "five2");
+		m.put(6, "six1");
+		m.put(6, "six2");
+		al.add(m);
+		for(Map map:al)
+		{
+			Iterator i=map.entrySet().iterator();
+			while(i.hasNext())
+				System.out.println(i.next());
+		}
+	}
+
+}
